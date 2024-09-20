@@ -17,7 +17,7 @@
             for (let i = 0; i < inputString.length; i++) {
                 // 获取字符的 ASCII 值并加上 a
                 const charCode = inputString.charCodeAt(i) + a+3;
-                // 将修改后的字符添加到结果字符串
+                                // 将修改后的字符添加到结果字符串
                 modifiedString += String.fromCharCode(charCode);
             }
 
@@ -25,6 +25,14 @@
             alert(`key:${a}\n密文:${modifiedString}`);
             document.getElementById("ss").innerHTML = `密文:${modifiedString}\n`;
             document.getElementById("kk").innerHTML = `key:${a}\n`;
+            document.getElementById("copyButton").innerHTML = `复制密文`;
+            document.getElementById('copyButton').addEventListener('click', function() {
+            navigator.clipboard.writeText(modifiedString).then(function() {
+                alert('代码已复制到剪贴板！');
+            }).catch(function(error) {
+                console.error('复制失败:', error);
+            });
+        });
         
         }
         function ifyString() {
@@ -47,6 +55,7 @@
             alert(`原文:${modifiedString}`);
             document.getElementById("ff").innerHTML = `原文:${modifiedString}\n`;
         }
+        
     </script>
 </head>
 <body>
@@ -58,6 +67,8 @@
     <br>
     <button onclick="modifyString()">提交</button>
     <h5 id="ss"></h5>
+    <button id="copyButton"></button>
+    <br>
     <h5 id="kk"></h5>
     <br>
     <h1>ASCII解密1.0</h1>
