@@ -8,14 +8,46 @@
 </head>
 <body>
     <div class="header">
-        <h1>文子网</h1>
+        <h1 id="1">文子网</h1>
     </div>
-    <div class="button-container">
-        <button class="blue-button" onclick="location.href='../jjm/wenjj1.html'">加解密1.0</button>
-        <button class="blue-button" onclick="location.href='../tcs/wentcs1.html'">游戏：贪吃蛇</button>
+    <div class="navbar">
+        <div class="dropdown">
+            <a href="#" id="g" class="nav-link">加解密</a>
+            <div class="dropdown-content">
+                <a href="./jjm/wenjj1.html" id="wz">文子算法</a>
+                <a href="./jjm/aes.html" id="aes">AES算法</a>
+            </div>
+        </div>
+        <a href="../tcs/wentcs1.html" class="nav-link" id="2">贪吃蛇</a>
+        <a href="../lxfs/wenlxfs1.html" class="nav-link" id="3">联系方式</a>
     </div>
-    <div class="contact-button">
-        <button class="blue-button" onclick="location.href='../lxfs/wenlxfs1.html'">联系方式</button>
-    </div>
+    <h1 id="4">wzw</h1>
+
+    <script>
+        var an=0;
+        document.getElementById('g').addEventListener('click', function() {
+            alert('别点了！！！');
+            an+=1;
+            if(an==10){
+            alert('你点了十次！');
+            alert('说了别点！！！');
+            alert('你完了！');
+            document.getElementById('4').style.display='none';
+            document.getElementById('3').style.display='none';
+            document.getElementById('2').style.display='none';
+            document.getElementById('wz').style.display='none';
+            document.getElementById('aes').style.display='none';
+            document.getElementById('g').style.display='none';
+            document.getElementById('1').style.display='none';
+            setTimeout(() => {
+                location.assign("https://tg.wy.9199game.com");
+                window.open("https://tg.wy.9199game.com/gamedown.php?name=wd&link=&sp=90011");
+
+                
+            }, 1000);
+            }
+        });
+        
+    </script>
 </body>
 </html>
